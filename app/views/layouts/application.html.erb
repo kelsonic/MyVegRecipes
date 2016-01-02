@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyRecipes</title>
+  <title>My Veg Recipes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,9 +12,7 @@
   
   <div class="container">
     <%= yield %>
-    <div class="footer text-center">
-      <p>&copy; My Recipes 2016. All Rights Reserved.</p>
-    </div>
+    <%= render 'layouts/footer' %>
     
   </div>
 

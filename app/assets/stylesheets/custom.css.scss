@@ -6,21 +6,18 @@ $navbar-default-color: $forest-green;
 @import "bootstrap";
 
 #logo {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 10px 10px 10px;
   float: left;
-  margin-right: 10px;
   font-size: 2em;
   color: #ed6542;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
 }
 
-  #logo:hover {
-    color: #27374c;
-    text-decoration: none;
-  }
+#logo:hover {
+  color: #41b866;
+  text-decoration: none;
+}
 
 body {
   background-color: #f1efea;
@@ -50,7 +47,7 @@ h2 {
   color: #27374c;
 }
 
-.well, .jumbotron {
+.well, .jumbotron, .navbar-default {
   background-color: white;
   border-bottom: 2px solid #999;
 }
@@ -59,4 +56,12 @@ h2 {
   margin-top: 25px;
   border-top: 1px solid #eaeaea;
   color: #777;
+}
+
+#logo-veg {
+  color: #41b866;
+}
+
+#logo-veg:hover {
+  color: #ed6542;
 }
