@@ -1,0 +1,62 @@
+$navbar-default-bg: #fff;
+$forest-green: #41b866;
+$navbar-default-color: $forest-green;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  margin-right: 10px;
+  font-size: 2em;
+  color: #ed6542;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+  #logo:hover {
+    color: #27374c;
+    text-decoration: none;
+  }
+
+body {
+  background-color: #f1efea;
+  padding-top: 80px;
+}
+
+.nav_item {
+  margin-left: 25px;
+  float: right;
+  margin-top: 20px;
+}
+
+h1, h2, h3, h4 {
+  line-heigh: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: #27374c;
+}
+
+.well, .jumbotron {
+  background-color: white;
+  border-bottom: 2px solid #999;
+}
+
+.footer {
+  margin-top: 25px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
