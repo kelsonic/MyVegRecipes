@@ -1,3 +1,15 @@
+Testing specifications for recipes:
+name: string
+summary: text
+description: text
+
+- chefname must be present
+- chefname must be between 2 characters and less than 40 characters
+- email must be unique
+- email must be present
+- email must be valid
+
+
 
 * My Veg Recipes primary colors:
 
