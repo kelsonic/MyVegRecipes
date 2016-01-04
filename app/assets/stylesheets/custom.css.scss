@@ -97,3 +97,14 @@ hr:before { /* Not really supposed to work, but does */
 a {
   color: #287fb8;
 }
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #999;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
