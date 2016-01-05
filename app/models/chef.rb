@@ -1,5 +1,5 @@
 class Chef < ActiveRecord::Base
-  
+  has_many :likes
   has_many :recipes
   
   before_save { self.chefname = chefname }
