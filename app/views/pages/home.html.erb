@@ -1,22 +1,35 @@
-<div class="jumbotron text-center">
-  <h1>Welcome to My Recipes App!</h1>
-  <h2>Get all the information you need on making only the best recipes!</h2>
-  <%= link_to "Sign Up", "", class: "btn btn-lg btn-success" %>
-</div>
+<% if logged_in? %>
+  <div class="jumbotron text-center">
+    <h1>Share your recipes with the world!</h1>
+    <h2>Chefs all around the globe want to see your recipes!</h2>
+    <%= link_to "New Recipe", new_recipe_path, class: "btn btn-lg btn-success" %>
+  </div>
+<% else %>
+  <div class="jumbotron text-center">
+    <h1>Welcome to My Veg Recipes!</h1>
+    <h2>Discover our community's best recipes by signing up!</h2>
+    <%= link_to "Join the Community", register_path, class: "btn btn-lg btn-success" %>
+  </div>
+<% end %>
+
 <div class="row">
+  
   <div class="col-md-4 text-center well">
     <h3 class="midrow">View Recipes as Guest User</h3>
     <h2>Browse and View Recipes as a Guest and Sign Up Later</h2>
     <p><%= link_to "Browse Recipe Listings", recipes_path, class: "btn btn-primary btn-small" %></p>
   </div>
+  
+  <div class="col-md-4 text-center well">
+    <h3 class="midrow">Sign in and start cooking!</h3>
+    <h2>Start making your own recipes and discover recipes from other chefs.</h2>
+    <p><%= link_to "Login", login_path, class: "btn btn-success btn-small" %></p>
+  </div>
+  
   <div class="col-md-4 text-center well">
     <h3 class="midrow">View Recipes as Guest User</h3>
     <h2>Browse and View Recipes as a Guest and Sign Up Later</h2>
     <p><%= link_to "Browse Recipe Listings", recipes_path, class: "btn btn-primary btn-small" %></p>
   </div>
-  <div class="col-md-4 text-center well">
-    <h3 class="midrow">View Recipes as Guest User</h3>
-    <h2>Browse and View Recipes as a Guest and Sign Up Later</h2>
-    <p><%= link_to "Browse Recipe Listings", recipes_path, class: "btn btn-primary btn-small" %></p>
-  </div>
+  
 </div>

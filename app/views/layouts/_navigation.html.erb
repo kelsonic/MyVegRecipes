@@ -3,14 +3,27 @@
     <%= link_to root_path, class: 'navbar-brand', id: "logo" do %>
       My <span id="logo-veg">Veg</span> Recipes
     <% end %>
-    <div class="nav_item">
-      <%= link_to "Create Recipe", new_recipe_path, class: "btn btn-default btn-success" %>
-    </div>
+    
+    <% if logged_in? %>
+      <div class="nav_item">
+        <%= link_to "Logout", logout_path, class: "btn btn-default btn-danger" %>
+      </div>
+      <div class="nav_item">
+        <%= link_to "New Recipe", new_recipe_path, class: "btn btn-default btn-success" %>
+      </div>
+    <% else %>
+      <div class="nav_item">
+        <%= link_to "Login", login_path, class: "btn btn-default btn-success" %>
+      </div>
+    <% end %>
+    
     <div class="nav_item">
       <%= link_to "link 2", "", class: "btn btn-default btn-success" %>
     </div>
+    
     <div class="nav_item">
       <%= link_to "link 1", "", class: "btn btn-default btn-success" %>
     </div>
+    
   </div>
 </header>

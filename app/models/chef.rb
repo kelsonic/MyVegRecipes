@@ -1,4 +1,5 @@
 class Chef < ActiveRecord::Base
+  
   has_many :likes
   has_many :recipes
   
