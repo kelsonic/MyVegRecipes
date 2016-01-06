@@ -7,11 +7,19 @@
       <h4>Brought to you by Chef <b><%= @recipe.chef.chefname %></b></h4>
     </p>
   </div>
+  
   <div class="col-md-8">
+    
+    <% if logged_in? and @recipe.chef == current_user %>
+      <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-sm btn-warning" %>
+    <% end %>
+    
     <h3><%= @recipe.summary %></h3>
+    
     <div class="show_recipe">
       <%= image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
     </div>
+    
     <div class="well">
       <p><b>Steps:</b></p>
       <%= simple_format(@recipe.description) %>
@@ -24,7 +32,6 @@
         <% end %>
       </div>
     </div>
-    <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-sm btn-warning" %>
   </div>
 </div>
 
