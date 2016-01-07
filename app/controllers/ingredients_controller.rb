@@ -1,7 +1,10 @@
 class IngredientsController < ApplicationController
   
+  before_action :require_user, except: [:show]
+  
   def show
     @ingredient = Ingredient.find(params[:id])
+    @recipes = @ingredient.recipes.paginate(page: params[:page], per_page: 4)
   end
   
   def new
