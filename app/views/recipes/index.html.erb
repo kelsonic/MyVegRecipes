@@ -24,12 +24,11 @@
     <div class="col-lg-6 well">
       <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
       <p><%= recipe.summary %></p>
+      <p>Cuisine: <%= render recipe.styles %></p>
+      <p>Ingredients: <%= render recipe.ingredients %></p>
       <p>
         <span class="quiet">
-          <small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small>
-        </span><br/>
-        <span class="quiet">
-          <small>Updated <%= time_ago_in_words(recipe.updated_at) %> ago</small>
+          <small>Created: <%= time_ago_in_words(recipe.created_at) %> ago, Updated: <%= time_ago_in_words(recipe.updated_at) %> ago.</small>
         </span>
       </p>
       
