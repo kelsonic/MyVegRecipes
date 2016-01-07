@@ -4,13 +4,18 @@
   <div class="col-md-4 pull-right text-center">
     <%= link_to gravatar_for(@recipe.chef, size: 200), chef_path(@recipe.chef) %>
     <p>
-      <h4>Brought to you by Chef <b><%= @recipe.chef.chefname %></b></h4>
+      <h4>Created by <b><%= @recipe.chef.chefname %></b></h4>
     </p>
   </div>
   
   <div class="col-md-8">
     
-    <% if logged_in? and @recipe.chef == current_user %>
+    <!--Delete recipe button-->
+    <% if current_user.admin? %>
+      <%= link_to "Delete Recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+    <% end %>
+    
+    <% if logged_in? and (@recipe.chef == current_user || current_user.admin?) %>
       <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-sm btn-warning" %>
     <% end %>
     
@@ -41,5 +46,5 @@
   </div>
 </div>
 
-
+<!--Recipes Listing button-->
 <h4><%= link_to 'Return to Recipes Listing', recipes_path, class: "btn btn-primary btn-small" %></h4>

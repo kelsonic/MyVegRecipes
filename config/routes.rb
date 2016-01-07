@@ -6,14 +6,6 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
   
-  # Recipe Routes
-  # get '/recipes', to: 'recipes#index'
-  # get '/recipes/new', to: 'recipes#new', as: 'new_recipe'
-  # post '/recipes', to: 'recipes#create'
-  # get '/recipes/:id/edit', to: 'recipes#edit', as: 'edit_recipe'
-  # patch '/recipes/:id', to: 'recipes#update'
-  # get '/recipes/:id', to: 'recipes#show', as: 'recipe'
-  # delete '/recipes/:id', to: 'recipes#destroy'
   resources :recipes do
     member do
       post 'like'
@@ -21,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :chefs, except: [:new]
+  resources :chefs, except: [:new, :destroy] # Build out the Chef destroy action!
   
   get '/register', to: 'chefs#new'
   
