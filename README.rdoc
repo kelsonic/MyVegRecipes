@@ -1,18 +1,18 @@
-Chefs:
+Things You'll Need:
 
-What we have already:
-- Chef model and validations
-- Chefs table with columns chefname and email
-
-What we need to do:
-- Add passwords to the chefs table so chefs can be authenticated and logged in
-- Use email as log in credentials, since email is unique
-- Ability to register new chefs to use the app
-- Ability to display chefs profile
-- Ability to list chefs using the app
-- Ability for chefs to log in and log out of the app
-- Restrict actions like create recipe, edit recipe, and like feature to logged in chefs only
-- Restricting edit of recipes by chefs who created the recipes
+1. Migration to create reviews table, body, type = text_field, two foreign keys, reference chef_id, reference recipe_id
+2. You'll need to build the review model
+3. You'll need to create tests for the spec, add validations to the review model
+4. Build the associations, has_many and belongs_to between recipes and reviews as well as between chefs and reviews
+5. Test out associations using TTD or in rails console
+    - recipe.reviews
+    - chef.reviews
+6. Routes
+    - new, create, edit, show, destroy
+7. Authenticated chefs can create reviews, before_action require_user
+8. Associate a chef_id and recipe_id
+9. Use existing code if possible
+10. Pagination for comments
 
 Read up on authentication using HasSecurePassword (what Rails provides by default). Why not use devise? If we build it from scratch, we know how to modify it.
 
