@@ -6,6 +6,8 @@ class Recipe < ActiveRecord::Base
   has_many :styles, through: :recipe_styles
   has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
+  has_many :recipe_comments, dependent: :destroy
+  has_many :comments, through: :recipe_comments
   
   validates :chef_id, presence: true
   validates :name, presence: true, length: {minimum: 2, maximum: 50}

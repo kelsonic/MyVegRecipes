@@ -2,6 +2,8 @@ class Chef < ActiveRecord::Base
   
   has_many :likes
   has_many :recipes
+  has_many :recipe_comments, dependent: :destroy
+  has_many :comments, through: :recipe_comments
   
   before_save { self.chefname = chefname }
   before_save { self.email = email.downcase }
