@@ -1,10 +1,10 @@
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
       
       <!--Responsive navbar-->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
-        <span class="sr-only">Toggle Navbar</span>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -17,77 +17,95 @@
     </div>
     
     <!--Logo contents right-side-->
-    <div class="collapse navbar-collapse" id="main-nav-collapse">
+    <div class="collapse navbar-collapse" id="navbar">
       <div class="nav navbar-nav navbar-right">
         
-        <!--Contact Button-->
-        <div class="nav_item">
-          <%= link_to "Contact", contact_path, class: "btn btn-large btn-primary" %>
-        </div>
+        <!--Ingredients Button-->
+        <!--<ul class="nav_ul_item">-->
+        <!--  <li class="dropdown">-->
+        <!--    <%= link_to '#', class: "btn btn-default btn-default dropdown-toggle", "data-toggle" => "dropdown" do %>-->
+        <!--      Ingredients <b class="caret"></b>-->
+        <!--    <% end %>-->
+        <!--    <ul class="dropdown-menu">-->
+        <!--      <% Ingredient.all.each do |ingredient| %>-->
+        <!--        <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>-->
+        <!--      <% end %>-->
+        <!--    </ul>-->
+        <!--  </li>-->
+        <!--</ul>-->
         
-        <!--About Button-->
-        <div class="nav_item">
-          <%= link_to "About", about_path, class: "btn btn-large btn-primary" %>
-        </div>
+        <!--Cuisines Button-->
+        <!--<ul class="nav_ul_item">-->
+        <!--  <li class="dropdown">-->
+        <!--    <%= link_to '#', class: "btn btn-default btn-default dropdown-toggle", "data-toggle" => "dropdown" do %>-->
+        <!--      Cuisines <b class="caret"></b>-->
+        <!--    <% end %>-->
+        <!--    <ul class="dropdown-menu">-->
+        <!--      <% Style.all.each do |style| %>-->
+        <!--        <li><%= link_to style.name, style_path(style) %></li>-->
+        <!--      <% end %>-->
+        <!--    </ul>-->
+        <!--  </li>-->
+        <!--</ul>-->
         
         <% if logged_in? %>
           
-          <!--Logged In Dropdown Menu-->
-          <ul class="nav_item">
-            <li class="dropdown">
-              <%= link_to '#', class: "btn btn-default btn-success dropdown-toggle", "data-toggle" => "dropdown" do %>
-                <%= current_user.chefname %> <b class="caret"></b>
-              <% end %>
-              <ul class="dropdown-menu">
-                <li><%= link_to "View Profile", chef_path(current_user) %></li>
-                <li><%= link_to "Edit Profile", edit_chef_path(current_user) %></li>
-                <li class="divider"></li>
-                <li><%= link_to "Logout", logout_path %></li>
-              </ul>
-            </li>
-          </ul>
-        
           <!--New Recipe Button-->
-          <div class="nav_item">
-            <%= link_to "New Recipe", new_recipe_path, class: "btn btn-large btn-success" %>
-          </div>
+          <li>
+            <%= link_to new_recipe_path do %>
+              <span class="glyphicon glyphicon-pencil"></span>&nbsp;New Recipe
+            <% end %>
+          </li>
+          
+          <!--Logged In Dropdown Menu-->
+          <li class="dropdown">
+            <%= link_to '#', class: "dropdown-toggle glyphicon glyphicon-user btn btn-success", id: "user-profile", data:{toggle: 'dropdown'}, role: "button", "aria-expanded" => "false" do %>
+              <%= current_user.chefname %> <b class="caret"></b>
+            <% end %>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <%= link_to chef_path(current_user) do %>
+                    <span class="glyphicon glyphicon-user"></span>&nbsp;Profile
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to edit_chef_path(current_user) do %>
+                    <span class="glyphicon glyphicon-cog"></span>&nbsp;Settings
+                  <% end %>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to logout_path do %>
+                    <span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout
+                  <% end %>
+                </li>
+              </ul>
+          </li>
         
         <% else %>
           
           <!--Login Button-->
-          <div class="nav_item">
-            <%= link_to "Login", login_path, class: "btn btn-default btn-success" %>
-          </div>
+          <li>
+            <%= link_to login_path do %>
+              <span class="glyphicon glyphicon-log-in"></span>&nbsp;Login
+            <% end %>
+          </li>
           
         <% end %>
         
-        <!--Cuisines Button-->
-        <ul class="nav_ul_item">
-          <li class="dropdown">
-            <%= link_to '#', class: "btn btn-default btn-default dropdown-toggle", "data-toggle" => "dropdown" do %>
-              Cuisines <b class="caret"></b>
-            <% end %>
-            <ul class="dropdown-menu">
-              <% Style.all.each do |style| %>
-                <li><%= link_to style.name, style_path(style) %></li>
-              <% end %>
-            </ul>
-          </li>
-        </ul>
+        <!--About Button-->
+        <li>
+          <%= link_to about_path do %>
+            <span class="glyphicon"></span>&nbsp;About
+          <% end %>
+        </li>
         
-        <!--Ingredients Button-->
-        <ul class="nav_ul_item">
-          <li class="dropdown">
-            <%= link_to '#', class: "btn btn-default btn-default dropdown-toggle", "data-toggle" => "dropdown" do %>
-              Ingredients <b class="caret"></b>
-            <% end %>
-            <ul class="dropdown-menu">
-              <% Ingredient.all.each do |ingredient| %>
-                <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
-              <% end %>
-            </ul>
-          </li>
-        </ul>
+        <!--Contact Button-->
+        <li>
+          <%= link_to contact_path do %>
+            <span class="glyphicon"></span>&nbsp;Contact
+          <% end %>
+        </li>
     
       </div>
     </div>    
