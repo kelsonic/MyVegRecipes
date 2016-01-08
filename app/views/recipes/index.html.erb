@@ -46,8 +46,8 @@
       </div>
     </div>
     
-    <div class="col-md-4">
-      <%= image_tag(recipe.picture.url, size: "250x150", class: "gravatar") if recipe.picture? %>
+    <div class="col-md-4 text-center">
+      <%= image_tag(recipe.picture.url, class: "recipe-index-img") if recipe.picture? %>
     </div>
   </div>
   <hr/>

@@ -35,6 +35,10 @@ body {
   margin-top: 20px;
 }
 
+.navbar {
+  border-bottom: 2px solid #999;
+}
+
 ul {
   list-style-type: none;
 }
@@ -147,4 +151,21 @@ button.navbar-toggle {
 
 a#user-profile.dropdown-toggle.glyphicon.glyphicon-user.btn.btn-success {
   padding: 10px 10px 10px 10px;
+}
+
+a#user-profile.dropdown-toggle.glyphicon.glyphicon-user.btn.btn-success:hover {
+  background-color: #469E46;
+}
+
+.recipe-index-img {
+  max-height: 200px;
+  max-width: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+}
+
+.title-chef-show {
+  background-color: #287fb8;
+  color: #fff;
 }
