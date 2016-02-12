@@ -1,16 +1,16 @@
 <%= render 'shared/errors', obj: @chef %>
 
 <div class="row">
-  <div class="well col-md-8 col-md-offset-2 text-center">
+  <div class="well col-md-4 col-md-offset-4 text-center">
     <%= form_for @chef do |f| %>
       <%= f.label :chefname %>
-      <%= f.text_field :chefname %>
+      <%= f.text_field :chefname, placeholder: "ie. John Roberts", autofocus: true, class: "form-control" %>
       
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, placeholder: "ie. john@example.com", class: "form-control" %>
       
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, class: "form-control" %>
       
       <%= f.submit(@chef.new_record? ? 'Register' : 'Edit Profile', class: "btn btn-success") %>
     <% end %>
