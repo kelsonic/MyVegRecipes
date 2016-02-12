@@ -11,11 +11,12 @@
   <div class="col-md-8">
     
     <!--Delete recipe button-->
-    <% if logged_in? and current_user.admin? %>
+    <% if logged_in? && (current_user == @recipe.chef || current_user.admin?) %>
       <%= link_to "Delete Recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
     <% end %>
     
-    <% if logged_in? and (@recipe.chef == current_user || current_user.admin?) %>
+    <!--Edit Recipe Button-->
+    <% if logged_in? and (current_user == @recipe.chef || current_user.admin?) %>
       <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-sm btn-warning" %>
     <% end %>
     

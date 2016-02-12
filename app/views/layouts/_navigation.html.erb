@@ -57,10 +57,20 @@
             <% end %>
           </li>
           
+          <!--Discover Recipes-->
+          <li>
+            <%= link_to "Discover Recipes", recipes_path %>
+          </li>
+          
+          <!--Discover Chefs-->
+          <li>
+            <%= link_to "Meet Chefs", chefs_path %>
+          </li>
+          
           <!--Logged In Dropdown Menu-->
           <li class="dropdown">
             <%= link_to '#', class: "dropdown-toggle glyphicon glyphicon-user btn btn-success", id: "user-profile", data:{toggle: 'dropdown'}, role: "button", "aria-expanded" => "false" do %>
-              <%= current_user.chefname %> <b class="caret"></b>
+              <%= current_user.chefname %> <i class="fa fa-chevron-down"></i>
             <% end %>
               <ul class="dropdown-menu" role="menu">
                 <li>
@@ -97,13 +107,6 @@
         <li>
           <%= link_to about_path do %>
             <span class="glyphicon"></span>&nbsp;About
-          <% end %>
-        </li>
-        
-        <!--Contact Button-->
-        <li>
-          <%= link_to contact_path do %>
-            <span class="glyphicon"></span>&nbsp;Contact
           <% end %>
         </li>
     

@@ -149,7 +149,7 @@ button.navbar-toggle {
   margin-top: 10px;
 }
 
-a#user-profile.dropdown-toggle.glyphicon.glyphicon-user.btn.btn-success {
+#user-profile {
   padding: 10px 10px 10px 10px;
 }
 
@@ -184,4 +184,8 @@ a#user-profile.dropdown-toggle.glyphicon.glyphicon-user.btn.btn-success:hover {
   border: 2px solid #f1efea;
   width: 100%;
   
+}
+
+#chef-index {
+  padding-top: 20px;
 }
